@@ -22,7 +22,6 @@ const App = () => {
             <Route path='/gallery' component={Gallery}/>
             <Route path='/blog' component={Blog}/> */}
         </Routes>
-        <Home />
         <Footer />
     </>
   )

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -7,31 +8,24 @@ function Header() {
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <Link to="/">
                             <img src="/img/logo.png" alt="" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">Classes</a></li>
-                            <li><a href="./services.html">Services</a></li>
-                            <li><a href="./team.html">Our Team</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><Link to="/">Home</Link></li>
+                            <li><a href="#">Programs</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
-                                    <li><a href="./class-timetable.html">Classes timetable</a></li>
-                                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                                    <li><a href="./team.html">Our team</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
-                                    <li><a href="./blog.html">Our blog</a></li>
-                                    <li><a href="./404.html">404</a></li>
+                                    <li><Link to="/aboutus">Beginner</Link></li>
+                                    <li><Link to="/programs">Intermediate</Link></li>
+                                    <li><Link to="/programs">Advanced</Link></li>
                                 </ul>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><Link to="/aboutus">About Us</Link></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -57,4 +51,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;
