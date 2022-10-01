@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+
+import './App.css'
 
 // components
 import Header from './components/Header';
@@ -9,26 +11,25 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 
-const App = () => {
-  return (
-    <>
-        <Header />
-        <Routes>
-            <Route path='/' exact element={<Home />}/>
-            <Route path='/home' element={<Home />}/>
-            <Route path='/aboutus' element={<AboutUs />}/>
-            {/* <Route path='/services' component={Services}/>
+function App() {
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path='/' exact element={<Home />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='/aboutus' element={<AboutUs />} />
+                {/* <Route path='/services' component={Services}/>
             <Route path='/team' component={OurTeam}/>
             <Route path='/gallery' component={Gallery}/>
             <Route path='/blog' component={Blog}/> */}
-        </Routes>
-        <Footer />
-    </>
-  )
+            </Routes>
+            <Footer />
+        </>
+    );
 }
 
-export default App
-
+export default App;
 
 {/* <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
