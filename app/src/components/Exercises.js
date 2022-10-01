@@ -1,29 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
-import { Pagination } from "@mui/material/Pagination";
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, Pagination } from '@mui/material';
 
-import ExerciseCard from './ExerciseCard';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 
-function Exercises({ exercises, bodyParts }) {
-    const a = [
-        {
-            "bodyPart": "waist",
-            "equipment": "body weight",
-            "gifUrl": "http://d205bpvrqc9yn1.cloudfront.net/0001.gif",
-            "id": "0001",
-            "name": "3/4 sit-up",
-            "target": "abs"
-        },
-        {
-            "bodyPart": "waist",
-            "equipment": "body weight",
-            "gifUrl": "http://d205bpvrqc9yn1.cloudfront.net/0002.gif",
-            "id": "0002",
-            "name": "45° side bend",
-            "target": "abs"
-        },];
+// components
+import ExerciseCard from './ExerciseCard';
+
+function Exercises({ exercises }) {
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const exercisesPerPage = 9;
+    const indexOfLastExercise = currentPage * exercisesPerPage;
+    const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+    const targetExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+
+    const paginate = (e, value) => {
+        setCurrentPage(value);
+
+        window.scrollTo({ top: 1800, behavior: 'smooth'});
+    };
 
     return (
         <section className="classes-section spad">
@@ -32,13 +28,12 @@ function Exercises({ exercises, bodyParts }) {
                     <center><span className="badge mb-5 text-white"><h2>Showing Result</h2></span></center>
                 </div>
                 <Stack direction="row" sx={{ gap: { lg: '110px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
-                    {/* {a.map(ex => { <ExerciseCard key={ex.id} exercise={ex} /> })} */}
-                    <ExerciseCard key={a[0].id} exercise={a[0]} />
-                    <ExerciseCard key={a[1].id} exercise={a[1]} />
-                    <ExerciseCard key={a[0].id} exercise={a[0]} />
-                    <ExerciseCard key={a[1].id} exercise={a[1]} />
+                    { targetExercises.map(exercise => <ExerciseCard key={exercise.id} exercise={exercise} />) }
                 </Stack>
             </Box>
+            <Stack mt="100px" alignItems="center" color="white">
+                <Pagination color="primary" shape="rounded" defaultPage={1} count={Math.ceil(exercises.length / exercisesPerPage)} page={currentPage} onChange={paginate} size="large" />
+            </Stack>
         </section>
     )
 }

@@ -1,12 +1,10 @@
-import React from 'react';
 
-function BodyPart({ name }) {
+function BodyPart({ name, bodyPartSearch }) {
   name = name[0].toUpperCase() + name.substring(1);
-  const functionToImplemet = () => { console.log('rendered'); }
 
   return (
     <div className="col-2">
-      <div onClick={functionToImplemet} className="cs-item btn">
+      <div onClick={() => bodyPartSearch(name)} className="cs-item btn">
         <span className="flaticon-002-dumbell"></span>
         <h4>{name}</h4>
       </div>
