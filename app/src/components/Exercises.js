@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-import { Box, Stack, Typography, Pagination } from '@mui/material';
-
-import { exerciseOptions, fetchData } from '../utils/fetchData';
+import { Box, Stack, Pagination } from '@mui/material';
 
 // components
 import ExerciseCard from './ExerciseCard';
@@ -18,11 +15,11 @@ function Exercises({ exercises }) {
     const paginate = (e, value) => {
         setCurrentPage(value);
 
-        window.scrollTo({ top: 1800, behavior: 'smooth'});
+        window.scrollTo({ top: 1750, behavior: 'smooth'});
     };
 
     return (
-        <section className="classes-section spad">
+        <section className="classes-section">
             <Box id="exercises">
                 <div className="container">
                     <center><span className="badge mb-5 text-white"><h2>Showing Result</h2></span></center>

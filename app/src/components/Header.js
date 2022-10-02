@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header class="header-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="logo">
+        <header className="header-section">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-3">
+                        <div className="logo">
                             <Link to="/">
                                 <img src="./assets/img/logo.png" alt="" />
                             </Link>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <nav class="nav-menu">
+                    <div className="col-lg-6">
+                        <nav className="nav-menu">
                             <ul>
-                                <li class="active"><Link to="/">Home</Link></li>
+                                <li className="active"><Link to="/">Home</Link></li>
                                 <li><a href="#">Programs</a>
-                                    <ul class="dropdown">
+                                    <ul className="dropdown">
                                         <li><Link to="/aboutus">Beginner</Link></li>
                                         <li><Link to="/programs">Intermediate</Link></li>
                                         <li><Link to="/programs">Advanced</Link></li>
@@ -29,22 +29,22 @@ function Header() {
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="top-option">
-                            <div class="to-search search-switch">
-                                <i class="fa fa-search"></i>
+                    <div className="col-lg-3">
+                        <div className="top-option">
+                            <div className="to-search search-switch">
+                                <i className="fa fa-search"></i>
                             </div>
-                            <div class="to-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            <div className="to-social">
+                                <a href="#"><i className="fa fa-facebook"></i></a>
+                                <a href="#"><i className="fa fa-twitter"></i></a>
+                                <a href="#"><i className="fa fa-youtube-play"></i></a>
+                                <a href="#"><i className="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="canvas-open">
-                    <i class="fa fa-bars"></i>
+                <div className="canvas-open">
+                    <i className="fa fa-bars"></i>
                 </div>
             </div>
         </header>

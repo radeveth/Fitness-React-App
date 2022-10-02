@@ -1,30 +1,28 @@
 import React, { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, Switch } from 'react-router-dom'
 
 import './App.css'
 
 // components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import NotFound from './components/NotFound';
 
 // pages
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import ExerciseDetails from './pages/ExerciseDetails';
 
 function App() {
     return (
         <>
-            <Header />
             <Routes>
-                <Route path='/' exact element={<Home />} />
-                <Route path='/home' element={<Home />} />
-                <Route path='/aboutus' element={<AboutUs />} />
-                {/* <Route path='/services' component={Services}/>
-            <Route path='/team' component={OurTeam}/>
-            <Route path='/gallery' component={Gallery}/>
-            <Route path='/blog' component={Blog}/> */}
+                <Route path='/' element={<> <Header /> <Home /> <Footer /> </>} />
+                <Route path='/home' element={<> <Header /> <Home /> <Footer /> </>} />
+                <Route path='/aboutus' element={<> <Header /> <AboutUs /> <Footer /> </>} />
+                <Route path='/exercise/:id' element={<> <ExerciseDetails /> <Footer /> </>} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
-            <Footer />
         </>
     );
 }

@@ -2,10 +2,10 @@ import React from 'react'
 
 function PricingPlanCard() {
   return (
-    <div class="col-lg-4 col-md-8">
-        <div class="ps-item">
+    <div className="col-lg-4 col-md-8">
+        <div className="ps-item">
             <h3>Class drop-in</h3>
-            <div class="pi-price">
+            <div className="pi-price">
                 <h2>$ 39.0</h2>
                 <span>SINGLE CLASS</span>
             </div>
@@ -17,8 +17,8 @@ function PricingPlanCard() {
                 <li>Month to mouth</li>
                 <li>No time restriction</li>
             </ul>
-            <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+            <a href="#" className="primary-btn pricing-btn">Enroll now</a>
+            <a href="#" className="thumb-icon"><i className="fa fa-picture-o"></i></a>
         </div>
     </div>
   )
