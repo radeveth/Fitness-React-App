@@ -4,14 +4,15 @@ import { Route, Routes, BrowserRouter, Switch } from 'react-router-dom'
 import './App.css'
 
 // components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/CommonComponents/Header';
+import Footer from './components/CommonComponents/Footer';
 
 // pages
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import NotFound from './pages/NotFound';
+import NotFound from './components/CommonComponents/NotFound';
 import ExerciseDetails from './pages/ExerciseDetails';
+import Contact from './pages/Contact';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path='/home' element={<> <Header /> <Home /> <Footer /> </>} />
                 <Route path='/aboutus' element={<> <Header /> <AboutUs /> <Footer /> </>} />
                 <Route path='/exercise/:id' element={<> <Header /> <ExerciseDetails /> <Footer /> </>} />
+                <Route path='/contact' element={ <> <Header /> <Contact /> <Footer /> </>}/>
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchData } from '../utils/fetchData';
+import { fetchData } from '../../utils/fetchData';
 
 // components
 import BodyPart from './BodyPart'

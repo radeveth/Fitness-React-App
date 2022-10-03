@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 
-import { fetchData } from '../utils/fetchData';
+import { fetchData } from '../../utils/fetchData';
 
 // components
 import Exercises from './Exercises';
+import NoResults from '../CommonComponents/NoResults';
 
 const exercisesUrl = 'https://localhost:7000/api/Exercises/All';
 
 function SearchExercises({ exercises, setExercises }) {
     let [search, setSearch] = useState('');
+    let [isHaveResult, setIsHaveResult] = useState(true);
 
     const handleSearch = async () => {
         if (search) {
@@ -21,7 +23,14 @@ function SearchExercises({ exercises, setExercises }) {
                             exercise.equipmentType.toLowerCase().includes(search) ||
                             exercise.bodyPartName.toLowerCase().includes(search));
 
-                        setExercises(searchExercises);
+                        if (searchExercises.length == 0) {
+                            setIsHaveResult(false);
+                            setExercises([]);
+                        } else {
+                            setExercises(searchExercises);
+                            setIsHaveResult(true);
+                        }
+
                     });
 
                 setSearch('');
@@ -46,6 +55,8 @@ function SearchExercises({ exercises, setExercises }) {
                         </div>
                     </div>
                 </div>
+
+                {!isHaveResult ? <NoResults /> : null}
             </section>
 
             {exercises.length != 0 && <Exercises exercises={exercises} />}

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { fetchData } from '../utils/fetchData';
 
 // components
-import BodyPartsList from '../components/BodyPartsList';
-import SearchExercises from '../components/SearchExercises';
+import BodyPartsList from '../components/BodyPartComponents/BodyPartsList';
+import SearchExercises from '../components/ExercisesComponents/SearchExercises';
 
 const bodyPartsUrl = 'https://localhost:7000/api/BodyParts';
 

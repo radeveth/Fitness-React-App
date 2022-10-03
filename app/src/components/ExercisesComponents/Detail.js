@@ -8,15 +8,15 @@ import { Button, Typography, Stack } from '@mui/material';
 function Detail({ exercise }) {
     const extraDetail = [
         {
-            icon: '../../public/assets/img/exerciseDetails/body-part.png',
+            icon: 'https://cdn-icons-png.flaticon.com/512/3525/3525377.png',
             name: "Body Part"
         },
         {
-            icon: '../../public/assets/img/exerciseDetails/target.png',
+            icon: 'https://cdn-icons-png.flaticon.com/512/3466/3466056.png',
             name: "Target Muscle"
         },
         {
-            icon: '../../public/assets/img/exerciseDetails/equipment.png',
+            icon: 'https://cdn-icons-png.flaticon.com/512/4658/4658440.png',
             name: "Equipment"
         }
     ];
@@ -25,10 +25,10 @@ function Detail({ exercise }) {
         <Stack gap="60px" sx={{ flexDirection: { lg: 'row' }, p: '20px', alignItems: 'center' }}>
             <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" className="detail-image" />
             <Stack sx={{ gap: { lg: '35px', xs: '20px' } }}>
-                <Typography sx={{ fontSize: { lg: '64px', xs: '30px' } }} fontWeight={700} textTransform="capitalize">
+                <Typography sx={{ fontSize: { lg: '64px', xs: '30px' }, color: "white" }} fontWeight={700} textTransform="capitalize">
                     {exercise.name}
                 </Typography>
-                <Typography sx={{ fontSize: { lg: '24px', xs: '18px' } }} color="#4F4C4C">
+                <Typography sx={{ fontSize: { lg: '24px', xs: '18px' } }} color="white">
                     Exercises keep you strong.{' '}
                     <span style={{ textTransform: 'capitalize' }}>{exercise.name}</span> bup is one
                     of the best <br /> exercises to target your {exercise.targetMuscleName}. It will help you improve your{' '}

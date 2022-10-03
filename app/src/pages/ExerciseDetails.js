@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import { fetchData, youtubeOptions } from '../utils/fetchData.js';
 
 // components
-import Detail from '../components/Detail';
-import ExerciseVideos from '../components/ExerciseVideos';
-import SimilarExercises from '../components/SimilarExercises';
+import Detail from '../components/ExercisesComponents/Detail';
+import ExerciseVideos from '../components/ExercisesComponents/ExerciseVideos';
+import SimilarExercises from '../components/ExercisesComponents/SimilarExercises';
 
 function ExerciseDetails() {
     const [exerciseDetails, setExerciseDetails] = useState({});
@@ -22,6 +22,8 @@ function ExerciseDetails() {
     const similarExercisesSearchUrl = 'https://localhost:7000/api/exercises/all';
 
     useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+
         const gettingExerciseData = () => {
             fetchData(exerciseUrl)
                 .then(exercise => {
@@ -40,14 +42,16 @@ function ExerciseDetails() {
                     const similarExercisesByEquipment = () => {
                         fetchData(`${similarExercisesSearchUrl}?equipment=${exerciseEqipment}`)
                             .then(exercisesData => {
-                                setSimilarExercisesByEquipment(exercisesData.slice(1));
+                                exercisesData = exercisesData.filter(exercise => exercise.id != id);
+                                setSimilarExercisesByEquipment(exercisesData);
                             });
                     };
 
                     const similarExercisesByTargetMuscle = () => {
                         fetchData(`${similarExercisesSearchUrl}?targetMuscle=${exerciseTargetMuscle}`)
                             .then(exercisesData => {
-                                setSimilarExercisesByTargetMuscle(exercisesData.slice(1));
+                                exercisesData = exercisesData.filter(exercise => exercise.id != id);
+                                setSimilarExercisesByTargetMuscle(exercisesData);
                             });
                     };
 
@@ -62,9 +66,16 @@ function ExerciseDetails() {
 
     return (
         <>
-            <Detail exercise={exerciseDetails} />
-            <ExerciseVideos exerciseVideos={youtubeVideos} name={exerciseDetails.name} />
-            <SimilarExercises equipmentExercises={similarExercisesByEquipment} targetMuscleExercises={similarExercisesByTargetMuscle} />
+            <div>
+                <div style={{ height: '150px', backgroundColor: 'black' }}></div>
+            </div>
+
+            <section className="classes-section spad">
+                <Detail exercise={exerciseDetails} />
+                <ExerciseVideos exerciseVideos={youtubeVideos} name={exerciseDetails.name} />
+                <SimilarExercises equipmentExercises={similarExercisesByEquipment} targetMuscleExercises={similarExercisesByTargetMuscle} />
+                <div className="text-404 mt-5"><Link to="/"><i className="fa fa-home"></i> Go back home</Link></div>
+            </section>
         </>
     )
 }

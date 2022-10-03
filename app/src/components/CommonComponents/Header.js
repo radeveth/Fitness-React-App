@@ -24,21 +24,19 @@ function Header() {
                                         <li><Link to="/programs">Advanced</Link></li>
                                     </ul>
                                 </li>
-                                <li><Link to="/aboutus">About Us</Link></li>
-                                <li><a href="/contact">Contact</a></li>
+                                {/* <li><Link to="/aboutus">About Us</Link></li>
+                                <li><Link to="/contact">Contact</Link></li> */}
                             </ul>
                         </nav>
                     </div>
                     <div className="col-lg-3">
                         <div className="top-option">
-                            <div className="to-search search-switch">
+                            {/* <div className="to-search search-switch">
                                 <i className="fa fa-search"></i>
-                            </div>
+                            </div> */}
                             <div className="to-social">
-                                <a href="#"><i className="fa fa-facebook"></i></a>
-                                <a href="#"><i className="fa fa-twitter"></i></a>
-                                <a href="#"><i className="fa fa-youtube-play"></i></a>
-                                <a href="#"><i className="fa fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/radoslav-radev-908a96235/" target={'_blank'}><i className="fa fa-linkedin"></i></a>
+                                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutube.com%2Fchannel%2FUCzNrEIAcnrwPiJDiMRuVOyQ%3Ffbclid%3DIwAR1ojfq-MdmeMmBSbhDsRc0jLW43hexSC-iaJrHQAec4ykPToWkDjvDiG0s&h=AT3ODNXF5ETqvMqsfSbDCtc2KhLH3LXu97mPhOpjp-U7Gay8w6YEt64Pmyqumgxw0z1vjEPrHO8reRquiaetGrFHhla1PhfNN4I7T98u2D2wkN5qMWARetz7_Jclt3zLmfpk8Q" target={'_blank'}><i className="fa fa-youtube-play"></i></a>
                             </div>
                         </div>
                     </div>
