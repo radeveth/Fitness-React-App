@@ -6,7 +6,7 @@ import { fetchData } from '../utils/fetchData';
 import BodyPartsList from '../components/BodyPartComponents/BodyPartsList';
 import SearchExercises from '../components/ExercisesComponents/SearchExercises';
 
-const bodyPartsUrl = 'https://localhost:7000/api/BodyParts';
+const bodyPartsUrl = 'https://localhost:7000/api/BodyParts/all';
 
 function Home() {
   const [exercises, setExercises] = useState([]);
