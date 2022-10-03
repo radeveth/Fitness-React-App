@@ -6,11 +6,11 @@ import './App.css'
 // components
 import Header from './components/Header';
 import Footer from './components/Footer';
-import NotFound from './components/NotFound';
 
 // pages
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import NotFound from './pages/NotFound';
 import ExerciseDetails from './pages/ExerciseDetails';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
                 <Route path='/' element={<> <Header /> <Home /> <Footer /> </>} />
                 <Route path='/home' element={<> <Header /> <Home /> <Footer /> </>} />
                 <Route path='/aboutus' element={<> <Header /> <AboutUs /> <Footer /> </>} />
-                <Route path='/exercise/:id' element={<> <ExerciseDetails /> <Footer /> </>} />
+                <Route path='/exercise/:id' element={<> <Header /> <ExerciseDetails /> <Footer /> </>} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </>

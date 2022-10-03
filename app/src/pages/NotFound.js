@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NotFound() {
     return (
-        <section style={{ backgroundColor: '#fff' }}>
+        <section className='section-404'>
             <div className="container mt-3">
                 <div className="text-404">
                     <h1>404</h1>
